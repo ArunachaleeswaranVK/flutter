@@ -1,0 +1,71 @@
+<% if !user_signed_in? %>
+    <style>
+        body{
+            background: url("/twitter.jpg") no-repeat center center fixed;
+            -weblit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size:cover;
+        }
+        h1{
+            font-weight:bold;
+            
+        }
+        .container-index{
+            margin-right:15%;
+            margin-left:15%;
+            
+        }
+        .text{
+            font-weight:300;
+            font-size:150%;
+        }
+        .footer{
+            text-align:center;
+            margin-top:10%;
+            font-size:75%;
+        }
+        .log-in{
+            float:right;
+            width:300px;
+            height:150px;
+            margin-top:7.5%;
+        }
+        .sign-up{
+            float:right;
+            width:300px;
+            height:350px;
+        }
+    </style>
+    
+    <div class="container-index row">
+        <div class="col-sm-6">
+            <h1>Welcome to Twitter.</h1>
+            <p class="text">
+                Connect with your friends.Meet with new people.<br>
+                Chat with friends. And get to know the updates !
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <div class="log-in">
+                <%= render "log_in" %>
+            </div>
+            <div class="sign-up">
+                <%= render "sign_up" %>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <p class="footer">
+            About Help Blog Status Jobs Terms Privacy Cookies Ads Info Brand Media Developers Directory &copy 2017 Twitter
+            </p>
+        </div>
+        
+    </div>
+    
+
+<% else %>
+    
+    <script>
+        document.location = "/home"
+    </script>
+<% end %>
